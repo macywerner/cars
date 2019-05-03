@@ -20,7 +20,7 @@ do
 		"L")
 		sort My_old_cars.txt;;
 		"Q")
-		echo "You have quit the progam"
+		echo "Goodbye"
 		CONTINUE=$((CONTINUE-1))
 		;;
 	esac	  
