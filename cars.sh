@@ -1,9 +1,27 @@
-#! /bin/bash
+#!/bin/bash
 #cars.sh
-#Macy Werner 
-i=""
-while [i !-eq "quit"]
+#Macy_Werner
+CONTINUE=1
+while [ $CONTINUE -eq 1 ]
 do
-	echo "Enter a car"
-	read car
-
+	echo "1.Enter car(E)"
+	echo "2.Show list of car(L)"
+	echo "3.Quit(Q)"
+	read choice
+	case "$choice" in
+		"E")
+		echo "What is the year of your car? "
+		read YEAR
+		echo "What is the make of your car? "
+		read MAKE 
+		echo "What is the model of your car? "
+		read MODEL
+		echo "$YEAR:$MAKE:$MODEL" >> My_old_cars.txt;;
+		"L")
+		sort My_old_cars.txt;;
+		"Q")
+		echo "You have quit the progam"
+		CONTINUE=$((CONTINUE-1))
+		;;
+	esac	  
+done
